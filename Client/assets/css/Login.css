@@ -1,0 +1,25 @@
+﻿body
+{
+    font-family: 'Segoe UI', sans-serif
+}
+
+.menu 
+{
+    background-color: White;
+    display: inline-block;
+    border-radius: 15px; 
+    -webkit-border-radius: 15px;
+    border: 3px solid white;
+    height: 48px;
+    margin-left: 2%;
+    margin-bottom : 10%;
+    width: 20%;
+    text-align:center;
+}
+
+.menu a
+{
+    color: #1B6608;  /*Dark green*/
+    font-size: 22px;
+    text-decoration: none;
+}

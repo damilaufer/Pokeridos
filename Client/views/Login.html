@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="./assets/css/Common.css"/>
+<link rel="stylesheet" href="./assets/css/Login.css"/>
+
+<h1>Pokeridos</h1>
+
+<div>
+    <span class="usernameIcon"></span>
+    <input type="text" placeholder="User Name" ng-model="username" />
+    <hr/>
+    <span class="passwordIcon"></span>
+    <input type="password" placeholder="Password" ng-model="password" />
+    
+    <button class='button' ng-click='login()'>Login</button>
+</div>
+
+<!-- will be out of flow -->
+<div class='offlineState' ng:click="reconnect()">Offline @@@ CSS me - offline={{offline}}</div>

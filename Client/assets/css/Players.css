@@ -1,0 +1,60 @@
+﻿#playersFrame
+{
+    display: inline-block;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.playerFrame
+{
+    margin-right: 1%;
+    margin-bottom: 2%;
+    
+    border: 12px solid blue;
+    display: inline-block;
+    
+    border-radius: 15px; 
+    -webkit-border-radius: 15px;
+}
+
+.playerImage
+{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.notPlaying
+{
+    margin-right: 1%;
+    margin-bottom: 2%;
+    
+    border: 12px solid red;
+}
+
+.playerName
+{
+    text-align: center;
+    color: white;
+    font-size:18px;
+    font-weight: bolder;
+}
+
+.addPlayer
+{
+    display: inline-block;
+}
+
+.leftArrow
+{
+    display: inline-block;
+    width: 5%;
+}
+
+.rightArrow
+{
+    display: inline-block;
+    width: 5%;
+}

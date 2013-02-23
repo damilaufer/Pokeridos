@@ -1,0 +1,23 @@
+﻿<link rel="stylesheet" href="./assets/css/ViewWinners.css"/>
+
+<h1></h1>
+
+<div>
+    //@@@ TODO: winners
+    <span>Tournament​<select ng-model="selectedTournament" ng-options="t.name for t in tournaments" ng:change="selectedTournamentChanged(t)"></select></span>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th ng:repeat="(i,th) in head" ng:class="selectedCls(i)" ng:click="changeSorting(i)">{{th}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng:repeat="row in body | orderBy:sort.column:sort.descending">
+            <td>{{row.a}}</td>
+            <td>{{row.b}}</td>
+            <td>{{row.c}}</td> 
+        </tr>
+    </tbody>
+</table>​

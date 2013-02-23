@@ -1,0 +1,17 @@
+﻿h1 
+{
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+}
+
+#newPlayerName 
+{
+    display: block;
+    width: 100px;
+}
+
+#addPlayerImage 
+{
+    border: 6px solid Blue;    
+}

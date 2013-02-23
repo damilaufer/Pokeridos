@@ -1,0 +1,79 @@
+﻿<link rel="stylesheet" href="./assets/css/Common.css"/>
+<link rel="stylesheet" href="./assets/css/ViewStandings.css"/>
+
+<button class='button' ng-click='navigateBack()'>Main menu</button>
+
+<h1>Standings</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th ng:repeat="(i,th) in head" ng:class="selectedCls(i)" ng:click="changeSorting(th.name)">{{th.text}}</th>
+        </tr>
+    </thead>
+
+    <tbody>
+            <tr ng:repeat="row in body | orderBy:sort.column:sort.descending">
+            <!-- "Player", "Points", "Games", "Finals"
+                , [firstpos], [second], [third]
+                ,"Pts. avg","Winnings","Winnings avg","Finals won %" -->
+            <td>{{row.playerName}}</td>
+            <td>{{row.points}}</td>
+            <td>{{row.games}}</td> 
+            <td>{{row.finals}}</td> 
+            <td>{{row.position0}}</td> 
+            <td>{{row.position1}}</td> 
+            <td>{{row.position2}}</td> 
+            <td>{{row.pointsAverage}}</td> 
+            <td>{{row.winnings}}</td> 
+            <td>{{row.winningsAverage}}</td>
+            <td>{{row.finalsWonAverage}}</td> 
+        </tr>
+    </tbody>
+</table>​
+
+<table>
+    <tr>
+        <td>Tournament</td>
+        <td>​<select ng-model="selectedTournament" ng-options="t.name for t in tournaments | orderBy:'toDate':true" ng:change="selectedTournamentChanged()"></select></td>
+        <td>From</td>
+        <td><select ng-model="fromGame" ng-options="g as GameDisplayValue(g) for g in games | orderBy:orderGames:true" /></td>
+        <td>To</td>
+        <td><select ng-model="toGame" ng-options="g as GameDisplayValue(g) for g in games | orderBy:orderGames:true" /></td>
+        <td><button class="button" ng:click="getData('byGames')">Get</button></td>
+    </tr>
+    <tr>
+        <td>From</td>
+        <td><input value="Click to select" ng-model="fromDate" ui-date/></td>
+        <td>To</td>
+        <td><input value="Click to select" ng-model="toDate" ui-date/></td>
+        <td></td><td></td>
+        <td><button class="button" ng:click="getData('byDates')">Get</button></td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td>Games in period</td>
+        <td>{{gamesNumber}}</td>
+    </tr>
+    <tr>
+        <td>Buy in</td>
+        <td>{{buyInAmount}}</td>
+    </tr>
+</table>
+
+<div>
+    <h2>Variables</h2>    
+    <div>Points per position:
+        <table>
+            <tr>
+                <td ng:repeat="(i, th) in positions">#{{i+1}}:<select ng-model="positions[i]" ng-options="num for num in [6,5,4,3,2,1,0]" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- will be out of flow -->
+<div class='offlineState' ng:click="reconnect()">Offline @@@ CSS me - offline={{offline}}</div>

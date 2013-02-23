@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="Players" EntityType="DBModel.Store.Players" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tournaments" EntityType="DBModel.Store.Tournaments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Games" EntityType="DBModel.Store.Games" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GamePlayers" EntityType="DBModel.Store.GamePlayers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BlindLevels" EntityType="DBModel.Store.BlindLevels" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="GameTournament" Association="DBModel.Store.GameTournament">
+      <End Role="Game" EntitySet="Games" />
+      <End Role="Tournament" EntitySet="Tournaments" />
+    </AssociationSet>
+    <AssociationSet Name="GamePlayerPlayer" Association="DBModel.Store.GamePlayerPlayer">
+      <End Role="GamePlayer" EntitySet="GamePlayers" />
+      <End Role="Player" EntitySet="Players" />
+    </AssociationSet>
+    <AssociationSet Name="GamePlayerGame" Association="DBModel.Store.GamePlayerGame">
+      <End Role="GamePlayer" EntitySet="GamePlayers" />
+      <End Role="Game" EntitySet="Games" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Players">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="PictureName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Tournaments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="FromDate" Type="datetime" Nullable="false" />
+    <Property Name="ToDate" Type="datetime" Nullable="false" />
+    <Property Name="BuyInAmount" Type="int" Nullable="false" />
+    <Property Name="WinnerId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Games">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="TournamentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GamePlayers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RebuyRoundIndex" Type="int" Nullable="true" />
+    <Property Name="LostRoundIndex" Type="int" Nullable="true" />
+    <Property Name="FinalPosition" Type="int" Nullable="false" />
+    <Property Name="PlayerId" Type="int" Nullable="false" />
+    <Property Name="GameId" Type="int" Nullable="false" />
+    <Property Name="Winnings" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlindLevels">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PeriodInMinutes" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="AnteAmount" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="Order" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="GameTournament">
+    <End Role="Game" Type="DBModel.Store.Games" Multiplicity="*" />
+    <End Role="Tournament" Type="DBModel.Store.Tournaments" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Tournament">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Game">
+        <PropertyRef Name="TournamentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GamePlayerPlayer">
+    <End Role="GamePlayer" Type="DBModel.Store.GamePlayers" Multiplicity="*" />
+    <End Role="Player" Type="DBModel.Store.Players" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GamePlayer">
+        <PropertyRef Name="PlayerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GamePlayerGame">
+    <End Role="GamePlayer" Type="DBModel.Store.GamePlayers" Multiplicity="*" />
+    <End Role="Game" Type="DBModel.Store.Games" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Game">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GamePlayer">
+        <PropertyRef Name="GameId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="DBModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Players" EntityType="DBModel.Player" />
+          <EntitySet Name="Tournaments" EntityType="DBModel.Tournament" />
+          <EntitySet Name="Games" EntityType="DBModel.Game" />
+          <AssociationSet Name="GameTournament" Association="DBModel.GameTournament">
+            <End Role="Game" EntitySet="Games" />
+            <End Role="Tournament" EntitySet="Tournaments" />
+          </AssociationSet>
+          <EntitySet Name="GamePlayers" EntityType="DBModel.GamePlayer" />
+          <AssociationSet Name="GamePlayerPlayer" Association="DBModel.GamePlayerPlayer">
+            <End Role="GamePlayer" EntitySet="GamePlayers" />
+            <End Role="Player" EntitySet="Players" />
+          </AssociationSet>
+          <AssociationSet Name="GamePlayerGame" Association="DBModel.GamePlayerGame">
+            <End Role="GamePlayer" EntitySet="GamePlayers" />
+            <End Role="Game" EntitySet="Games" />
+          </AssociationSet>
+          <EntitySet Name="BlindLevels" EntityType="DBModel.BlindLevel" />
+        </EntityContainer>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="PictureName" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Tournament">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="FromDate" Nullable="false" />
+          <Property Type="DateTime" Name="ToDate" Nullable="false" />
+          <Property Type="Int32" Name="BuyInAmount" Nullable="false" />
+          <NavigationProperty Name="Games" Relationship="DBModel.GameTournament" FromRole="Tournament" ToRole="Game" />
+          <Property Type="Int32" Name="WinnerId" Nullable="true" >
+            <Documentation>
+              <LongDescription>The playerId of the winner of the tournament</LongDescription>
+            </Documentation>
+          </Property>
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <NavigationProperty Name="Tournament" Relationship="DBModel.GameTournament" FromRole="Game" ToRole="Tournament" />
+          <Property Type="Int32" Name="TournamentId" Nullable="false" />
+          <NavigationProperty Name="Players" Relationship="DBModel.GamePlayerGame" FromRole="Game" ToRole="GamePlayer" />
+        </EntityType>
+        <Association Name="GameTournament">
+          <End Type="DBModel.Game" Role="Game" Multiplicity="*" />
+          <End Type="DBModel.Tournament" Role="Tournament" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Tournament">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Game">
+              <PropertyRef Name="TournamentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GamePlayer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="RebuyRoundIndex" Nullable="true" Type="Int32" />
+          <Property Name="LostRoundIndex" Nullable="true" Type="Int32" />
+          <Property Name="FinalPosition" Nullable="false" Type="Int32" />
+          <NavigationProperty Name="Player" Relationship="DBModel.GamePlayerPlayer" FromRole="GamePlayer" ToRole="Player" />
+          <Property Type="Int32" Name="PlayerId" Nullable="false" />
+          <Property Type="Int32" Name="GameId" Nullable="false" />
+          <Property Type="Int32" Name="Winnings" Nullable="false" />
+        </EntityType>
+        <Association Name="GamePlayerPlayer">
+          <End Type="DBModel.GamePlayer" Role="GamePlayer" Multiplicity="*" />
+          <End Type="DBModel.Player" Role="Player" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GamePlayer">
+              <PropertyRef Name="PlayerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GamePlayerGame">
+          <End Type="DBModel.GamePlayer" Role="GamePlayer" Multiplicity="*" />
+          <End Type="DBModel.Game" Role="Game" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GamePlayer">
+              <PropertyRef Name="GameId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BlindLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PeriodInMinutes" Nullable="false" />
+          <Property Type="Int32" Name="Amount" Nullable="false" />
+          <Property Type="Int32" Name="AnteAmount" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="Order" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBModelContainer">
+    <EntitySetMapping Name="Players">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.Player)">
+        <MappingFragment StoreEntitySet="Players">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PictureName" ColumnName="PictureName" />
+          <ScalarProperty Name="Password" ColumnName="Password"/>
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tournaments">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.Tournament)">
+        <MappingFragment StoreEntitySet="Tournaments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="BuyInAmount" ColumnName="BuyInAmount" />
+          <ScalarProperty Name="WinnerId" ColumnName="WinnerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Games">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.Game)">
+        <MappingFragment StoreEntitySet="Games">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="TournamentId" ColumnName="TournamentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GamePlayers">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.GamePlayer)">
+        <MappingFragment StoreEntitySet="GamePlayers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RebuyRoundIndex" ColumnName="RebuyRoundIndex" />
+          <ScalarProperty Name="LostRoundIndex" ColumnName="LostRoundIndex" />
+          <ScalarProperty Name="FinalPosition" ColumnName="FinalPosition" />
+          <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+          <ScalarProperty Name="GameId" ColumnName="GameId" />
+          <ScalarProperty Name="Winnings" ColumnName="Winnings" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlindLevels">
+      <EntityTypeMapping TypeName="IsTypeOf(DBModel.BlindLevel)">
+        <MappingFragment StoreEntitySet="BlindLevels">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PeriodInMinutes" ColumnName="PeriodInMinutes" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="AnteAmount" ColumnName="AnteAmount" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="DBModel" ZoomLevel="112" >
+        <EntityTypeShape EntityType="DBModel.Player" Width="1.5" PointX="5.625" PointY="1.375" Height="1.592306315104167" />
+        <EntityTypeShape EntityType="DBModel.Tournament" Width="1.5" PointX="2.25" PointY="0.875" Height="2.085348307291667" />
+        <EntityTypeShape EntityType="DBModel.Game" Width="1.5" PointX="2.125" PointY="4" Height="1.7566536458333326" />
+        <AssociationConnector Association="DBModel.GameTournament">
+          <ConnectorPoint PointX="2.9375" PointY="4" />
+          <ConnectorPoint PointX="2.9375" PointY="2.960348307291667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DBModel.GamePlayer" PointX="5.5" PointY="4.125" Width="1.5" Height="2.2496956380208335" />
+        <AssociationConnector Association="DBModel.GamePlayerPlayer">
+          <ConnectorPoint PointX="6.3125" PointY="4.125" />
+          <ConnectorPoint PointX="6.3125" PointY="2.967306315104167" />
+        </AssociationConnector>
+        <AssociationConnector Association="DBModel.GamePlayerGame">
+          <ConnectorPoint PointX="5.5" PointY="4.9408268229166659" />
+          <ConnectorPoint PointX="3.625" PointY="4.9408268229166659" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DBModel.BlindLevel" Width="1.5" PointX="8.375" PointY="2.375" Height="1.7566536458333326" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

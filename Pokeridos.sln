@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeridosClient", "Client\PokeridosClient.csproj", "{7FDED291-655D-4C51-9F3B-9EAF2999CD13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeridosService", "PokeridosService\PokeridosService.csproj", "{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeScriptHTMLApp1", "TypeScriptHTMLApp1\TypeScriptHTMLApp1.csproj", "{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectName0 = \u0022$/Pokeridos\u0022,\u0020RODAAAAA
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectUniqueName1 = Client\\PokeridosClient.csproj
+		SccLocalPath1 = .
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection1 = Client\\
+		SccProjectUniqueName2 = PokeridosService\\PokeridosService.csproj
+		SccLocalPath2 = .
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection2 = PokeridosService\\
+		SccProjectUniqueName3 = TypeScriptHTMLApp1\\TypeScriptHTMLApp1.csproj
+		SccLocalPath3 = .
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection3 = TypeScriptHTMLApp1\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FDED291-655D-4C51-9F3B-9EAF2999CD13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FDED291-655D-4C51-9F3B-9EAF2999CD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FDED291-655D-4C51-9F3B-9EAF2999CD13}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7FDED291-655D-4C51-9F3B-9EAF2999CD13}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7FDED291-655D-4C51-9F3B-9EAF2999CD13}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7FDED291-655D-4C51-9F3B-9EAF2999CD13}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FDED291-655D-4C51-9F3B-9EAF2999CD13}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{7FDED291-655D-4C51-9F3B-9EAF2999CD13}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7FDED291-655D-4C51-9F3B-9EAF2999CD13}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7FDED291-655D-4C51-9F3B-9EAF2999CD13}.Release|x86.ActiveCfg = Debug|Any CPU
+		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Release|x86.ActiveCfg = Release|Any CPU
+		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Release|x86.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

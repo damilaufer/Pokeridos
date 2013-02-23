@@ -1,0 +1,1 @@
+Server=e8c186a9-7e2b-4f7a-9c52-a16e014de474.sqlserver.sequelizer.com;Database=dbe8c186a97e2b4f7a9c52a16e014de474;User ID=akbuzceeblibpnwl;Password=7d3ftnatB5WYtwKWxWzZwDdFS4kRFR2aheZudNNWySubrtZPYDNWgcdBauvycqUT;

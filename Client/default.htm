@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" ng-app="pokeridosApp">
+    <head>
+        <meta charset="utf-8">
+
+        <!--<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width" content="initial-scale=1.0"/>-->
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <title>Pokeridos</title>
+
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" type="text/css" />
+        <link rel="stylesheet" href="http://angular-ui.github.com/angular-ui/build/angular-ui.css" type="text/css" />
+        <!-- Use only if there is no internet (because I don't have the images for these CSS files
+        <link rel="stylesheet" href="lib/jquery-ui.1.8.16.css" type="text/css" />        
+        <link rel="stylesheet" href="lib/angular/angular-ui.css" type="text/css" />-->
+    </head>
+    <body>
+        <div ng-view></div>
+
+        <div>
+            <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+            <script src="http://angular-ui.github.com/lib/maskedinput/jquery.maskedinput.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+            <script src="http://angular-ui.github.com/angular-ui/build/angular-ui.js"></script>-->
+            
+            <script src="lib/jquery.1.8.3.min.js"></script>
+            <script src="lib/jquery-ui.1.9.2.min.js"></script>
+            <script src="lib/angular/jquery.maskedinput.js"></script>
+            <script src="lib/angular/angular.min.js"></script>
+            <script src="lib/angular/angular-ui.js"></script>
+
+            <script src="lib/date.format.js"></script>
+            <script src="bootstrap.js"></script>
+            <script src="lib/flotr2.min.js"></script>
+
+            <script src="dataServices.js"></script>
+            <script src="common.js"></script>
+            <script src="controllers/LoginController.js"></script>
+            <script src="controllers/MainMenuController.js"></script>
+            <script src="controllers/PlayGameController.js"></script>
+            <script src="controllers/NewGameController.js"></script>
+            <script src="controllers/ViewStandingsController.js"></script>
+            <script src="controllers/ViewAGameController.js"></script>
+            <script src="controllers/ViewPointsController.js"></script>
+            <script src="controllers/ViewWinnersController.js"></script>
+            <script src="filters.js"></script>
+            <script src="directives.js"></script>
+        </div>
+    </body>
+</html>

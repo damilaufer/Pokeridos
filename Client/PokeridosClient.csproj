@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{7FDED291-655D-4C51-9F3B-9EAF2999CD13}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>"%24/Pokeridos", RODAAAAA</SccProjectName>
+    <SccLocalPath>..</SccLocalPath>
+    <SccAuxPath />
+    <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>TypeScriptTest</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="angular.d.ts" />
+    <Content Include="assets\css\Common.css" />
+    <Content Include="assets\css\Login.css" />
+    <Content Include="assets\css\ViewAGame.css" />
+    <Content Include="assets\css\ViewPoints.css" />
+    <Content Include="assets\css\ViewWinners.css" />
+    <Content Include="assets\images\Ale.jpg" />
+    <Content Include="assets\images\Alex.jpg" />
+    <Content Include="assets\images\Carlos.jpg" />
+    <Content Include="assets\images\DamiL.jpg" />
+    <Content Include="assets\images\Guest.png" />
+    <Content Include="assets\images\Miguel.jpg" />
+    <Content Include="assets\images\NAndo.jpg" />
+    <Content Include="assets\images\NoRebuy.gif" />
+    <Content Include="assets\images\Seba.jpg" />
+    <Content Include="assets\images\Zacky.jpg" />
+    <Content Include="bootstrap.js" />
+    <Content Include="assets\css\Players.css" />
+    <Content Include="assets\images\LeftArrow.png" />
+    <Content Include="assets\images\RightArrow.png" />
+    <Content Include="Common.js" />
+    <Content Include="controllers\LoginController.js" />
+    <Content Include="controllers\ViewAGameController.js" />
+    <Content Include="controllers\ViewWinnersController.js" />
+    <Content Include="controllers\ViewPointsController.js" />
+    <Content Include="controllers\MainMenuController.js" />
+    <Content Include="controllers\NewGameController.js" />
+    <Content Include="controllers\PlayGameController.js" />
+    <Content Include="lib\angular\angular-ui.css" />
+    <Content Include="lib\jquery-ui.1.8.16.css" />
+    <Content Include="lib\jquery-ui.1.9.2.min.js" />
+    <Content Include="lib\jquery.1.8.3.min.js" />
+    <Content Include="test.css" />
+    <Content Include="dataServices.js" />
+    <Content Include="assets\css\MainMenu.css" />
+    <Content Include="assets\images\Plus.png" />
+    <Content Include="directives.js" />
+    <Content Include="filters.js" />
+    <Content Include="default.htm" />
+    <Content Include="lib\angular\angular-cookies.js" />
+    <Content Include="lib\angular\angular-cookies.min.js" />
+    <Content Include="lib\angular\angular-loader.js" />
+    <Content Include="lib\angular\angular-loader.min.js" />
+    <Content Include="lib\angular\angular-resource.js" />
+    <Content Include="lib\angular\angular-resource.min.js" />
+    <Content Include="lib\angular\angular-sanitize.js" />
+    <Content Include="lib\angular\angular-sanitize.min.js" />
+    <Content Include="lib\angular\angular.js" />
+    <Content Include="lib\angular\angular.min.js" />
+    <Content Include="lib\date.format.js" />
+    <Content Include="lib\flotr2.min.js" />
+    <Content Include="test.htm" />
+    <Content Include="views\Login.html" />
+    <Content Include="views\ViewAGame.html" />
+    <Content Include="views\ViewPoints.html" />
+    <Content Include="views\ViewStandings.html" />
+    <Content Include="views\MainMenu.html" />
+    <Content Include="assets\css\NewGame.css" />
+    <Content Include="assets\css\PlayGame.css" />
+    <Content Include="views\PlayGame.html" />
+    <Content Include="views\NewGame.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="views\ViewWinners.html" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\ViewStandings.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="controllers\ViewStandingsController.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2140</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:81/Client</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptSourceMap> --sourcemap</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Target Name="BeforeBuild">
+    <Message Text="Compiling TypeScript files" />
+    <Message Text="Executing tsc$(TypeScriptSourceMap) @(TypeScriptCompile ->'&quot;%(fullpath)&quot;', ' ')" />
+    <Exec Command="tsc$(TypeScriptSourceMap) @(TypeScriptCompile ->'&quot;%(fullpath)&quot;', ' ')" />
+  </Target>
+</Project>

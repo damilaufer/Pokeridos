@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+    <script src="http://angular-ui.github.com/angular-ui/build/angular-ui.js"></script>
+    <script src="http://angular-ui.github.com/lib/maskedinput/jquery.maskedinput.js"></script>
+
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" type="text/css" />
+    <link rel="stylesheet" href="http://angular-ui.github.com/angular-ui/build/angular-ui.css" type="text/css" />
+
+    <link rel="stylesheet" href="test.css"/>
+</head>
+<body ng-app="myApp">
+​
+    <script type="text/javascript">
+       var myApp = angular.module('myApp',['ui.directives']);
+
+       function MyCtrl($scope) {
+           $scope.date = new Date();
+           $scope.tr = true;
+           $scope.fa = false ;
+       }
+    </script>
+
+   <div ng-controller="MyCtrl">
+        <!--<div class="ng-class:{t: tr};">aaa</div>-->
+        <div ng-class="{font: 1, t: tr};">aaa</div>
+        <div ng-class="{font: 1, f: fa};">aaa</div>
+
+        <div class="t">bbb</div>
+
+
+        <ng-form name="dateForm">
+            <p><input name="dateField" value="Click Here for Datepicker" ng-model="date" ui-date></p>
+
+            <input ng-model="maskDemo" ui-mask="'99-99-9999'">
+        </ng-form>
+    </div>
+</body>
+</html>

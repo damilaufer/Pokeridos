@@ -1,0 +1,18 @@
+﻿When calling PUT or DELETE web APIs, if you receive 405, uninstall webDav windows component.
+DOC: to enable put http://forums.iis.net/t/1163441.aspx
+
+Para abrir el port:
+Abrir 192.168.2.1 (Edimax), ir a Port forwarding. Averiguar el IP de la compu con ipconfig. Poner ese IP con el port 81, both protocols y listo. Con whatsmyip.com averiguar el external ip, y entrar ese en vez de localhost
+
+
+
+@@@ OFFLINE APPLICATION!!!
+
+@@@ security, and open the app to other players
+@@@ typescript
+@@@ cuando haya winner, que:
+	* mande automaticamente el mail
+@@@ rename Game.Player to Game.GamePlayer
+
+
+•	Mostrar/no mostrar un jugador (si no se muestra alguien, aparece en “otros”).

@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="./assets/css/Common.css"/>
+<link rel="stylesheet" href="./assets/css/MainMenu.css"/>
+
+<h1>Pokeridos</h1>
+
+<ul>
+    <li class='menu'><a href="{{gameHref}}">{{gameTitle}}</a></li>
+    <li class='menu'><a href="#/viewStandings">View standings</a></li>
+    <li class='menu'><a href="#/viewAGame">View a game</a></li>
+    <li class='menu'><a href="#/viewPoints">View points</a></li>
+    <li class='menu'><a href="#/viewWinners">Hall of fame</a></li>
+</ul>
+
+<!-- will be out of flow -->
+<div class='button' ng-click="clearOfflineQueue()">Clear offline queue</div>
+<div class='offlineState' ng:click="reconnect()">Offline @@@ CSS me - offline={{offline}}</div>

@@ -1,0 +1,30 @@
+﻿<link rel="stylesheet" href="./assets/css/Common.css"/>
+<link rel="stylesheet" href="./assets/css/Players.css" type="text/css" />
+<link rel="stylesheet" href="./assets/css/NewGame.css" type="text/css" />
+
+<button class='button' ng-click='navigateBack()'>Main menu</button>
+
+<h1>New game in tournament: {{openTournament.name}}</h1>
+    
+<div id='hscroll'>
+    <!--<div class='leftArrow'><img src="./assets/images/LeftArrow.png" alt="LeftArrow"/></div>-->
+    <div id='playersFrame'>
+
+        <div ng-repeat="player in players" ng-class='{playerFrame: 1, notPlaying: !player.playing}' ng-click='togglePlayer(player)'>
+            <img src="./assets/images/{{player.pictureName}}" class="playerImage"/>
+            <div class="playerName">{{player.name}}</div>
+        </div>
+
+        <div class='addPlayer'>
+            <img id="addPlayerImage" src="./assets/images/Plus.png" alt="Plus" ng-click="addPlayer()"/>
+            <!-- Popup to get the name of the new player -->
+            <textarea id="newPlayerName" rows="1" cols="50" placeholder="Guest" ng-model="newPlayerName" maxlength="10"></textarea>
+        </div>
+    </div>
+    <!--<div class='rightArrow'><img src="./assets/images/RightArrow.png" alt="RightArrow"/></div>-->
+</div>
+
+<button class='button' ng-click='start()'>Start game</button>
+
+<!-- will be out of flow -->
+<div class='offlineState' ng:click="reconnect()">Offline @@@ CSS me - offline={{offline}}</div>
