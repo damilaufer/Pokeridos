@@ -5,27 +5,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeridosClient", "Client\P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeridosService", "PokeridosService\PokeridosService.csproj", "{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeScriptHTMLApp1", "TypeScriptHTMLApp1\TypeScriptHTMLApp1.csproj", "{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}"
-EndProject
 Global
 	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 4
-		SccProjectName0 = \u0022$/Pokeridos\u0022,\u0020RODAAAAA
+		SccNumberOfProjects = 3
+		SccProjectUniqueName0 = Client\\PokeridosClient.csproj
 		SccLocalPath0 = .
-		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
 		CanCheckoutShared = false
-		SccProjectUniqueName1 = Client\\PokeridosClient.csproj
+		SccProjectFilePathRelativizedFromConnection0 = Client\\
+		SccProjectUniqueName1 = PokeridosService\\PokeridosService.csproj
 		SccLocalPath1 = .
 		CanCheckoutShared = false
-		SccProjectFilePathRelativizedFromConnection1 = Client\\
-		SccProjectUniqueName2 = PokeridosService\\PokeridosService.csproj
+		SccProjectFilePathRelativizedFromConnection1 = PokeridosService\\
+		SccProjectName2 = \u0022$/Pokeridos\u0022,\u0020RODAAAAA
 		SccLocalPath2 = .
+		SccProvider2 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
 		CanCheckoutShared = false
-		SccProjectFilePathRelativizedFromConnection2 = PokeridosService\\
-		SccProjectUniqueName3 = TypeScriptHTMLApp1\\TypeScriptHTMLApp1.csproj
-		SccLocalPath3 = .
-		CanCheckoutShared = false
-		SccProjectFilePathRelativizedFromConnection3 = TypeScriptHTMLApp1\\
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,16 +50,6 @@ Global
 		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{9CEDE831-7DEF-42CE-BD0A-ECA33D06CF28}.Release|x86.ActiveCfg = Release|Any CPU
-		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
-		{9EAB3858-E3BE-48A7-93BF-301ECD5C42BB}.Release|x86.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
